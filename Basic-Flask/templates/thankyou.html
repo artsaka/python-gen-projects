@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <div class="container">
+        <h1 class="fw-bold text-uppercase">Client messages</h1><br>
+        <p class="fs-2">Hello {{data.name}}</p>
+        <p class="fs-2">We have received your requirements as following:</p><br>
+        <p class="fs-2 text-break">{{data.description}}</p>
+    </div>
+{% endblock %}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" class="h-100">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+</head>
+<body class="d-flex flex-column h-100">
+    <nav class="navbar navbar-expand-lg sticky-top navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="/">Flask WTForms</a>
+            
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link active" aria-current="page" href="{{url_for('index')}}">Home</a>
+                    <a class="nav-link" href="#">Products</a>
+                    <a class="nav-link" href="#">Blogs</a>
+                    <a class="nav-link" href="#">Tutorials</a>
+                    <a class="nav-link" href="#">Contact</a>
+                </div>                
+            </div>
+            <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+    <!-- This part is reserved for the main content which are different pages -->
+    <main>
+        {% block content %}
+        {% endblock %}        
+    </main>
+    <footer class="footer mt-auto py-3 bg-secondary text-center fw-semibold">
+        <div class="row g-0 text-light ">
+            <div class="col-sm-6 col-md-4">
+                <div>Facebook</div>
+                <div>Twitter</div>
+                <div>LinkedIn</div>
+                <div>Social Media</div>
+            </div>
+            <div class="col-sm-6 col-md-4">Middle box</div>
+            <div class="col-sm-6 col-md-4">End box</div>
+          </div>
+    </footer>    
+</body>
+</html>

@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <div class="container">
+        <h2>Contact Us</h2>
+        <form action="{{url_for('signupForm')}}" method="GET">
+            <div class="form-group">
+                <label for="firstname">Your Name:</label>
+                <input id="firstname" type="text" name="fname" placeholder="Please enter your name here" class="form-control">
+            </div>
+            <div>
+                <label for="desc">Description</label>
+                <textarea id="desc" name="description" class="form-control" cols="30" rows="10" placeholder="Text here"></textarea>
+            </div>
+            <br>
+            <input type="submit" value="Send" class="btn btn-success">
+        </form>
+    </div>
+{% endblock %}

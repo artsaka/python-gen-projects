@@ -1,0 +1,45 @@
+{% import "bootstrap/wtf.html" as wtf %}
+{% extends "layout.html" %}
+
+{% block content %}
+
+    <div class="container my-2">
+
+        <form method="POST">            
+            {{form.hidden_tag()}}
+            {{form.name.label}}
+            {{form.name()}}
+            <br>
+            <!-- Boolean field -->
+            {{form.isAccept()}} {{form.isAccept.label}}
+            <br>
+            <!-- Radio field  -->
+            {{form.gender.label}} {{form.gender()}}
+            <br>
+            <!-- Select field  -->
+            {{form.skill.lable}} {{form.skill()}}
+            <br>
+            <!-- Dropdown field  -->
+            {{form.address.label}} <br> {{form.address()}}
+            <br>        
+            {{form.submit()}}        
+        
+        </form>
+        <hr>
+        {% if name %}
+
+            <!-- <p>Your name is <strong>{{name}}</strong></p>
+            <p>Accept our services? <strong>{{isAccept}}</strong></p>
+            <p>Gender: <strong>{{gender}}</strong></p>
+            <p>Skill: <strong>{{skill}}</strong></p>
+            <p>Address: <strong>{{address}}</strong></p> -->
+            <p>Your name is <strong>{{session['name']}}</strong></p>
+            <p>Accept our services? <strong>{{session['isAccept']}}</strong></p>
+            <p>Gender: <strong>{{session['gender']}}</strong></p>
+            <p>Skill: <strong>{{session['skill']}}</strong></p>
+            <p>Address: <strong>{{session['address']}}</strong></p>
+        {% else %}
+            <p>no data</p>
+        {% endif %}        
+    </div>
+{% endblock %}
